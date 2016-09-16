@@ -4,6 +4,14 @@ FactoryGirl.define do
   end
 end
 
+FactoryGirl.define do
+  factory :scheme do
+    scheme_name {Faker::Hipster.word}
+    creator_id { rand(1..5) }
+    excerpt_id { rand(1..5) }
+  end
+end
+
 
 FactoryGirl.define do
   factory :color_scheme_with_colors, :parent => :color_scheme do |color_scheme|
@@ -12,16 +20,15 @@ FactoryGirl.define do
 end
 
 FactoryGirl.define do
-  factory_girl :excerpt do
-    content "Blah Blah Blah"
+  factory :excerpt do
+    content {Faker::Hipster.sentence}
   end
 end
 
 FactoryGirl.define do
-  factory_girl :user do
-    username "alex_s"
-    password "1234"
-    first_name "alex"
-    last_name "sanborn"
+  factory :user do
+    username {Faker::Hipster.word}
+    first_name {Faker::Name.first_name}
+    last_name {Faker::Name.last_name}
   end
 end

@@ -1,6 +1,6 @@
 class CreateColorSchemes < ActiveRecord::Migration
   def change
-    create_table :colorschemes do |t|
+    create_table :color_schemes do |t|
       t.string :color_id
       t.integer :scheme_id
 

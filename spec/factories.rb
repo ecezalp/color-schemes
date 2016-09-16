@@ -7,8 +7,12 @@ end
 FactoryGirl.define do
   factory :scheme do
     scheme_name {Faker::Hipster.word}
-    creator_id { rand(1..5) }
-    excerpt_id { rand(1..5) }
+      after_create do |s|
+      user = create(:user)
+      s.creator_id = user.id
+      excerpt = create(:excerpt)
+      s.excerpt_id = excerpt.id
+    end
   end
 end
 

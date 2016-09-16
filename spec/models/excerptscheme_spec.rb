@@ -6,10 +6,7 @@ describe Schemes do
 
   it 'can have an excerpt' do
     sch1 = create(:scheme)
-    exc1 = create(:excerpt)
-    sch1.excerpts << exc1
-
-    expect(sch1.excerpts).to include(exc1)
+    expect(sch1.excerpts).to be_valid
   end
 
   # it "has content" do
